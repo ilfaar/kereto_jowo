@@ -43,7 +43,7 @@ either version 3 of the License, or any later version.
     ```
 5. pull this repo
     ```
-    git pull https://github.com/macbook47/kereto_jowo/
+    git pull https://github.com/ilfaar/kereto_jowo/
     ```
 6. edit recipe.txt with your data -> kalau gak tau vi, googling dl aja :P
     ```
