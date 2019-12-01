@@ -172,6 +172,8 @@ def check_first(checkdata, bookingdata, numretry, usingproxy):
                 'User-Agent': 'KAI/2.6.0'}
 
             bookdataEncrypt = '{"staorigincode":"' + AESCipher(pwd).encrypt(reqcheck['org']) + '","stadestinationcode":"' + AESCipher(pwd).encrypt(reqcheck['des']) + '","tripdate":"' + AESCipher(pwd).encrypt(reqcheck['date']) + '"}'
+            
+            print(bookdataEncrypt)
 
             r = requests.post(target, data=bookdataEncrypt, headers=headers)
 
