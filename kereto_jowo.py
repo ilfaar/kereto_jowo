@@ -192,10 +192,8 @@ def check_first(checkdata, bookingdata, numretry, usingproxy):
                 if(len(resCheck['payload']) > 0):
                     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' process -> check ' + str(len(resCheck['payload'])) + ' train')
                     for i in resCheck['payload']:
-                        #if i['availability'] > 0:
-                            #print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' hooray seat found process -> check kursi : ' + str(i['availability']) + ' -> ' + str(i['trainname']))
-                            if i['noka'] == reqcheck['train_no'] or (i['noka'] == reqcheck['train_no1']) or (i['noka'] == reqcheck['train_no2']) or (i['noka'] == reqcheck['train_no3']):
-                                #if i['subclass'] == reqcheck['subclass']:
+                        if i['noka'] == reqcheck['train_no']:
+                            #if i['subclass'] == reqcheck['subclass']:
                                 if i['availability'] >= int(reqcheck['adult']):
                                     print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' hooray seat found process -> check kursi : ' + str(i['availability']))
                                     global checkresult
@@ -203,10 +201,9 @@ def check_first(checkdata, bookingdata, numretry, usingproxy):
                                     return successCheck
                                 print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' opp seat full process -> check kursi : ' + str(i['availability']))
                                 raise Exception
-                                #print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' opps no train class found')
-                             #print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' opps no seat found')
-                         print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' opps no seat found')
-                         raise Exception
+                            #print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' opps no train class found')
+                print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + ' opps no seat found')
+                raise Exception
             print('#########################################')
             print('')
 
